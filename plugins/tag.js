@@ -171,7 +171,7 @@ function discover(req, res, next) {
   }
 
   // for each git path:
-  gitPaths.sort().forEach(function(dir) {
+  gitPaths.forEach(function(dir) {
     var tags, humanDir;
     // 1) normalize by taking dirname, changing homePath to ~/ and sorting
     dir = path.dirname(dir);
