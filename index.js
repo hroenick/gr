@@ -278,7 +278,7 @@ Gr.prototype.addAll = function() {
 Gr.prototype.dirUnique = function() {
   var last;
   this.directories = this.directories.filter(Boolean)
-                  .sort()
+                  //.sort()
                   .filter(function(key) {
                     var isDuplicate = (key == last);
                     last = key;
