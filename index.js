@@ -1,4 +1,5 @@
-var fs = require('fs'),
+var _ = require('lodash'),
+    fs = require('fs'),
     path = require('path'),
     style = require('./lib/style.js'),
     Config = require('./lib/config.js'),
@@ -277,13 +278,7 @@ Gr.prototype.addAll = function() {
 
 Gr.prototype.dirUnique = function() {
   var last;
-  this.directories = this.directories.filter(Boolean)
-                  //.sort()
-                  .filter(function(key) {
-                    var isDuplicate = (key == last);
-                    last = key;
-                    return !isDuplicate;
-                  });
+  this.directories = _.uniq(this.directories.filter(Boolean));
 };
 
 Gr.prototype.dirExist = function() {
